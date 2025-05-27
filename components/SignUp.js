@@ -13,10 +13,10 @@ export default function SignUp(props) {
           <h2>Create your hackatweet account</h2>
         </div>
         <div className={styles.form}>
-          <input type="text" placeholder="Firstname" name="firstname" />
-          <input type="text" placeholder="Username" name="username" />
-          <input type="password" placeholder="Password" name="password" />
-          <button>SignUp</button>
+          <input className={styles.input} type="text" placeholder="Firstname" name="firstname" />
+          <input className={styles.input} type="text" placeholder="Username" name="username" />
+          <input className={styles.input} type="password" placeholder="Password" name="password" />
+          <button className={styles.button}>SignUp</button>
         </div>
       </div>
     </div>

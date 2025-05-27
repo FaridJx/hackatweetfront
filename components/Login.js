@@ -1,13 +1,19 @@
 import {React, useState} from "react";
 import styles from "../styles/Login.module.css";
 import SignUp from "./SignUp";
+import SignIn from "./SignIn";
 
 export default function () {
 
     const [isOpenSignUp, setIsOpenSignUp] = useState(false)
+    const [isOpenSignIn, setIsOpenSignIn] = useState(false)
 
     function handleOpenSignUp (){
         setIsOpenSignUp(!isOpenSignUp)
+    }
+
+    function handleOpenSignIn (){
+        setIsOpenSignIn(!isOpenSignIn)
     }
 
   return (
@@ -29,12 +35,13 @@ export default function () {
               </div>
               <div>
                 <h4>Already have an account ?</h4>
-                <button className={styles.btnLogin}>Sign in</button>
+                <button className={styles.btnLogin} onClick={handleOpenSignIn}>Sign in</button>
               </div>
             </div>
           </div>
         </section>
         {isOpenSignUp && <SignUp handleOpen={handleOpenSignUp}/>}
+        {isOpenSignIn && <SignIn handleOpen={handleOpenSignIn}/>}
       </main>
     </div>
   );

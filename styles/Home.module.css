@@ -45,7 +45,7 @@
 }
 
 .centerHeader{
-  border-bottom: 1px solid white;
+  /* border-bottom: 1px solid white; */
   padding: 0 18px;
 }
 
@@ -57,4 +57,10 @@
   grid-column-start: 9;
   grid-column-end: 13;
   border-left: 1px solid white;
+  color: white;
+  padding: 0 18px;
+}
+
+.rightHeader{
+  /* border-bottom: 1px solid white; */
 }

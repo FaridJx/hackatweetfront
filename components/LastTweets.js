@@ -28,7 +28,7 @@ export default function LastTweets() {
         },
     ];
 
-  const tweets = data.map((e) => {
+  const tweets = data.map((e, key) => {
     const [like, setLike] = useState(false)
     let style = like ? style={color: "red"} : {color: "white"}
 

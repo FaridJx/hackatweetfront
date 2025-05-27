@@ -1,0 +1,7 @@
+.hashtagContainer{
+    display: flex;
+    flex-direction: column;
+    background-color: #1a222b;
+    padding: 5px 15px;
+    border-radius: 15px;
+}

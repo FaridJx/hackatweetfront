@@ -1,7 +1,8 @@
-import styles from '../styles/Home.module.css';
-import { useState } from 'react';
-import Tweet from './Tweet';
-import LastTweets from './LastTweets';
+import styles from "../styles/Home.module.css";
+import { useState } from "react";
+import Tweet from "./Tweet";
+import LastTweets from "./LastTweets";
+import Trends from "./Trends";
 
 function Home() {
   return (
@@ -10,31 +11,42 @@ function Home() {
         {/* <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1> */}
-        <div id='left' className={styles.left}>
+        <div id="left" className={styles.left}>
           <div className={styles.leftContainer}>
-            <div><img
+            <div>
+              <img
                 className={styles.leftHeader}
                 src="/assets/Logo_of_Twitter.svg.png"
                 alt="Twitter logo"
-              /></div>
+              />
+            </div>
             <div className={styles.leftFooter}>
-              <div><img/></div>
+              <div>
+                <img />
+              </div>
               <div>
                 <h4>John</h4>
               </div>
             </div>
           </div>
         </div>
-        <div id='center' className={styles.center}>
+        <div id="center" className={styles.center}>
           <div className={styles.centerHeader}>
             <h3>Home</h3>
-            <Tweet/>
+            <Tweet />
           </div>
           <div>
-            <LastTweets/>
+            <LastTweets />
           </div>
         </div>
-        <div id='right' className={styles.right}></div>
+        <div id="right" className={styles.right}>
+          <div className={styles.rightHeader}>
+            <h3>Trends</h3>
+          </div>
+          <div>
+            <Trends />
+          </div>
+        </div>
       </main>
     </div>
   );

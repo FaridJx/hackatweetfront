@@ -1,0 +1,35 @@
+.containerTweet{
+    padding: 20px 30px;
+}
+
+
+.input{
+    /* border: 1px solid red; */
+}
+
+.inputTweet{
+    background-color: transparent;
+    border: none;
+    color: white;
+    border-bottom: 1px solid rgb(126, 126, 126);
+    width: 100%;
+}
+
+.validatonTweet{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.buttonTweet{
+    height: 30px;
+    width: 80px;
+    border: none;
+    color: white;
+    font-weight: bold;
+    background-color: #348eed;
+    border-radius: 20px;
+    text-align: center;
+    cursor: pointer;
+    margin-left: 15px;
+}

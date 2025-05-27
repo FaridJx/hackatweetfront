@@ -1,0 +1,62 @@
+.tweetContainer{
+    border-top: 1px solid rgb(93, 93, 93);
+    padding: 15px;
+}
+
+
+/* ------------ USER PART ----------- */
+
+.userInfo{
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    color: grey;
+}
+
+.imgAvatar{
+    height: 60px;
+    width: 60px;
+    margin-right: 5px;
+}
+ 
+.userName{
+    font-weight: bold;
+    color: white;
+}
+
+.userTag{
+    margin: 0 5px;
+}
+
+
+
+/* ------------ MESSAGE PART ------------ */
+
+.tweetMsg{
+    margin-top: 10px;
+}
+
+
+
+/* -------------- LIKES PART ------------ */
+
+/* ---- Nom "judge" à modifier (je pense que je peux trouver mieux) ---- */
+.judge{
+    display: flex;
+    align-items: center;
+}
+
+.likeContainer{
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.likes{
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.trash{
+    cursor: pointer;
+}

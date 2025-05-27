@@ -1,0 +1,64 @@
+.main {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  min-height: 100vh;
+  background-color: #151d26;
+  color: white;
+}
+
+
+/* ----------- LEFT SIDE ------------- */
+
+.leftLogin{
+    grid-column-start: 1;
+    grid-column-end: 6;
+    grid-row-start: 1;
+    grid-row-end: 13;
+    background-image: url('../public/assets/Logo_of_Twitter.svg.png'), url('../public/assets/cadre-dore-sur-fond-bleu.jpg');
+    background-position: center;
+    background-size: 200px, cover;
+    background-repeat: no-repeat;
+
+}
+
+
+
+/* ---------- RIGHT SIDE ------------ */
+
+.rightLogin{
+    grid-column-start: 6;
+    grid-column-end: 13;
+    grid-row-start: 1;
+    grid-row-end: 13;
+    padding: 25px;
+}
+
+.rightZone{
+    width: 60%;
+}
+
+.title{
+    font-size: 60px;
+}
+
+.joinSentence{
+    font-size: 30px;
+}
+
+.btnLogin{
+    border: solid 1px grey;
+    padding: 10px;
+    width: 150px;
+    border-radius: 20px;
+    background-color: transparent;
+    color: #189df0;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.btnLogin:hover{
+    background-color: #189df0;
+    color: white;
+}

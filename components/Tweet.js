@@ -4,7 +4,7 @@ import styles from "../styles/Tweet.module.css";
 export default function Tweet() {
 
     const [tweet, setTweet] = useState('')
-    let maxCarac = tweet.length > 280 ? {color:'red'} : {color:'white'}
+    let maxCarac = tweet.length > 280 ? { color:'red' } : { color:'white' }
 
 
   return (

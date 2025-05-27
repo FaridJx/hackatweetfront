@@ -1,6 +1,7 @@
 import styles from '../styles/Home.module.css';
 import { useState } from 'react';
 import Tweet from './Tweet';
+import LastTweets from './LastTweets';
 
 function Home() {
   return (
@@ -30,7 +31,7 @@ function Home() {
             <Tweet/>
           </div>
           <div>
-
+            <LastTweets/>
           </div>
         </div>
         <div id='right' className={styles.right}></div>

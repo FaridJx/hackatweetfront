@@ -41,6 +41,7 @@
     border: none;
     background-color: transparent;
     border: 1px solid grey;
+    border-radius: 5px;
     padding: 10px;
     margin: 5px 0;
 }
@@ -50,4 +51,6 @@
     border-radius: 20px;
     padding: 5px 20px;
     margin-top: 5px;
+    font-weight: 600;
+    cursor: pointer;
 }

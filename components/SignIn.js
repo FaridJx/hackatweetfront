@@ -7,6 +7,7 @@ import { useRouter } from "next/router"
 export default function SignIn(props) {
   const [signInUsername, setSignInUsername] = useState("");
   const [signInPassword, setSignInPassword] = useState("");
+  const [errorMsg, setErrorMsg] = useState(false)
   const dispatch = useDispatch();
   const router = useRouter();
 
@@ -21,6 +22,8 @@ export default function SignIn(props) {
       if(data.result){
         dispatch(login({username: data.username, firstname: data.firstname, token: data.token}))
         router.push('/home')
+      } else{
+        setErrorMsg(true)
       }
     })
   };
@@ -32,7 +35,8 @@ export default function SignIn(props) {
         <div>
           <img src="../assets/Logo_of_Twitter.svg.png" height={35} />
         </div>
-        <div>
+        <div className={styles.title}>
+                {errorMsg && (<p className={styles.errorMsg}>Veuillez vérifier votre identifiant ou votre mot de passe. </p>)}
           <h2>Create your hackatweet account</h2>
         </div>
         <div className={styles.form}>

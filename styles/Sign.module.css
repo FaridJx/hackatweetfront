@@ -30,6 +30,15 @@
     max-height: 350px;
 }
 
+.title{
+    text-align: center;
+}
+
+.errorMsg{
+    color: red;
+    font-weight: 700;
+}
+
 .form{
     display: flex;
     flex-direction: column;
@@ -44,10 +53,12 @@
     border-radius: 5px;
     padding: 10px;
     margin: 5px 0;
+    color: white;
 }
 
 .input:focus{
     background-color: rgb(255, 255, 255);
+    color: black;
 }
 
 .button{

@@ -14,7 +14,7 @@ function App({ Component, pageProps }) {
   return (
     <Provider store={store}>
       <Head>
-        <title>Next.js App</title>
+        <title>Hackatweet</title>
       </Head>
       <Component {...pageProps} />
     </Provider>

@@ -1,7 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "../styles/Sign.module.css"
+import { useDispatch, useSelector } from "react-redux";
+import { login } from "../reducers/users";
+import { useRouter } from "next/router"
 
 export default function SignUp(props) {
+
+  const [signUpFirstname, setSignUpFirstname] = useState("");
+  const [signUpUsername, setSignUpUsername] = useState("");
+  const [signUpPassword, setSignUpPassword] = useState("");
+  const [errorMsg, setErrorMsg] = useState(false)
+  const dispatch = useDispatch();
+  const router = useRouter();
+
+  const handleLogin = () => {
+      fetch('http://localhost:3000/users/signin', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({firstname: signUpFirstname, username: signUpUsername, password: signUpPassword})
+    })
+    .then(response => response.json())
+    .then(data => {
+      if(data.result){
+        dispatch(login({username: data.username, firstname: data.firstname, token: data.token}))
+        router.push('/home')
+      } else{
+        setErrorMsg(true)
+      }
+    })
+  };
   return (
     <div className={styles.modal}>
       <div className={styles.overlay} onClick={props.handleOpen}></div>
@@ -9,14 +36,18 @@ export default function SignUp(props) {
         <div>
           <img src="../assets/Logo_of_Twitter.svg.png" height={35} />
         </div>
-        <div>
+        <div className={styles.title}>
+        {errorMsg && (<p className={styles.errorMsg}>Veuillez vérifier votre identifiant ou votre mot de passe. </p>)}
           <h2>Create your hackatweet account</h2>
         </div>
         <div className={styles.form}>
-          <input className={styles.input} type="text" placeholder="Firstname" name="firstname" />
-          <input className={styles.input} type="text" placeholder="Username" name="username" />
-          <input className={styles.input} type="password" placeholder="Password" name="password" />
-          <button className={styles.button}>SignUp</button>
+          <input className={styles.input} type="text" placeholder="Firstname" name="firstname" onChange={(e) => setSignUpFirstname(e.target.value)}
+            value={signUpFirstname}/>
+          <input className={styles.input} type="text" placeholder="Username" name="username" onChange={(e) => setSignUpUsername(e.target.value)}
+            value={signUpUsername}/>
+          <input className={styles.input} type="password" placeholder="Password" name="password" onChange={(e) => setSignUpPassword(e.target.value)}
+            value={signUpPassword}/>
+          <button className={styles.button} onClick={() => handleLogin()}>SignUp</button>
         </div>
       </div>
     </div>

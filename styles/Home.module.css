@@ -47,6 +47,12 @@
 .centerHeader{
   /* border-bottom: 1px solid white; */
   padding: 0 18px;
+  height: 25vh;
+}
+
+.tweetContainer{
+    overflow-y: scroll;
+    height: 75vh;
 }
 
 /* --------------- RIGHT SIDE ------------------ */

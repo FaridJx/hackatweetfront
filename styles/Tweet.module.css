@@ -1,8 +1,18 @@
 .containerTweet{
-    padding: 20px 30px;
+    padding: 10px 30px;
 }
 
+.error{
+    text-align: center;
+    font-weight: 700;
+    color: red;
+}
 
+.valid{
+    text-align: center;
+    font-weight: 700;
+    color: rgb(0, 255, 51);
+}
 
 .inputTweet{
     background-color: transparent;

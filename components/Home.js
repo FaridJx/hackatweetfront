@@ -1,10 +1,15 @@
 import styles from "../styles/Home.module.css";
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import Tweet from "./Tweet";
 import LastTweets from "./LastTweets";
 import Trends from "./Trends";
 
 function Home() {
+
+  const user = useSelector((state) => state.users.value);
+  const [refreshTrigger, setRefreshTrigger] = useState(0);
+  
   return (
     <div>
       <main className={styles.main}>
@@ -25,7 +30,7 @@ function Home() {
                 <img />
               </div>
               <div>
-                <h4>John</h4>
+                <h4>{user.firstname}</h4>
               </div>
             </div>
           </div>
@@ -33,10 +38,10 @@ function Home() {
         <div id="center" className={styles.center}>
           <div className={styles.centerHeader}>
             <h3>Home</h3>
-            <Tweet />
+            <Tweet onTweet={() => setRefreshTrigger(prev => prev + 1)}/>
           </div>
-          <div>
-            <LastTweets />
+          <div className={styles.tweetContainer}>
+            <LastTweets refresh={refreshTrigger}/>
           </div>
         </div>
         <div id="right" className={styles.right}>

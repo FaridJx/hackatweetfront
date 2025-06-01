@@ -9,6 +9,7 @@ export default function SignIn(props) {
   const [signInPassword, setSignInPassword] = useState("");
   const [errorMsg, setErrorMsg] = useState(false)
   const dispatch = useDispatch();
+  const user = useSelector((state) => state.users.value);
   const router = useRouter();
 
   const handleLogin = () => {
@@ -18,9 +19,9 @@ export default function SignIn(props) {
       body: JSON.stringify({username: signInUsername, password: signInPassword})
     })
     .then(response => response.json())
-    .then(data => {
+    .then(data => {      
       if(data.result){
-        dispatch(login({username: data.username, firstname: data.firstname, token: data.token}))
+        dispatch(login({username: data.data.username, firstname: data.data.firstname, token: data.data.token}))        
         router.push('/home')
       } else{
         setErrorMsg(true)

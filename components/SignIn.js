@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import styles from "../styles/Sign.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../reducers/users";
+import { useRouter } from "next/router"
 
 export default function SignIn(props) {
   const [signInUsername, setSignInUsername] = useState("");
   const [signInPassword, setSignInPassword] = useState("");
   const dispatch = useDispatch();
+  const router = useRouter();
 
   const handleLogin = () => {
       fetch('http://localhost:3000/users/signin', {
@@ -18,7 +20,7 @@ export default function SignIn(props) {
     .then(data => {
       if(data.result){
         dispatch(login({username: data.username, firstname: data.firstname, token: data.token}))
-        window.location.assign('/home')
+        router.push('/home')
       }
     })
   };

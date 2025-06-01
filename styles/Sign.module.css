@@ -46,6 +46,10 @@
     margin: 5px 0;
 }
 
+.input:focus{
+    background-color: rgb(255, 255, 255);
+}
+
 .button{
     border: none;
     border-radius: 20px;

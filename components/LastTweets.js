@@ -14,31 +14,13 @@ export default function LastTweets(props) {
       .then(response => response.json())
       .then(data => {
         if(data){
+          console.log(data)
+          
           setLastTweet(data)
         }
       })
     }, [props.refresh])
 
-    // const data = [
-    //     {
-    //     name: "Fani",
-    //     tag: "@LovyDeLaVida",
-    //     time: "3 minutes",
-    //     msg: "Lorem ipsum dolor sit amet",
-    //     },
-    //     {
-    //     name: "Fariha",
-    //     tag: "@majestyDeLaNoche",
-    //     time: "12 hours",
-    //     msg: "Lorem ipsum dolor sit amet dolor sit amet dolor sit amet",
-    //     },
-    //     {
-    //     name: "Fasouspi",
-    //     tag: "@adalynoDeNintendo",
-    //     time: "5 days",
-    //     msg: "Lorem ipsum dolor sit amet",
-    //     },
-    // ];
 
   const tweets =  lastsTweet.map((e, key) => {
     let like = false

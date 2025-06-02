@@ -14,15 +14,17 @@ export default function SignUp(props) {
   const router = useRouter();
 
   const handleLogin = () => {
-      fetch('http://localhost:3000/users/signin', {
+      fetch('http://localhost:3000/users/signup', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({firstname: signUpFirstname, username: signUpUsername, password: signUpPassword})
     })
     .then(response => response.json())
     .then(data => {
+      console.log(data)
+      
       if(data.result){
-        dispatch(login({username: data.username, firstname: data.firstname, token: data.token}))
+        dispatch(login({username: data.newDoc.username, firstname: data.newDoc.firstname, token: data.newDoc.token}))
         router.push('/home')
       } else{
         setErrorMsg(true)

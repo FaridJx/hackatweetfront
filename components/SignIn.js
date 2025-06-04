@@ -57,7 +57,7 @@ export default function SignIn(props) {
             onChange={(e) => setSignInPassword(e.target.value)}
             value={signInPassword}
           />
-          <button className={styles.button} onClick={() => handleLogin()}>SignUp</button>
+          <button className={styles.button} onClick={() => handleLogin()}>SignIn</button>
         </div>
       </div>
     </div>

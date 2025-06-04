@@ -29,7 +29,9 @@ export default function SignUp(props) {
       } else{
         setErrorMsg(true)
       }
-    })
+    }) .catch(err => {
+    console.error('Fetch error:', err);
+  });
   };
   return (
     <div className={styles.modal}>
@@ -39,7 +41,7 @@ export default function SignUp(props) {
           <img src="../assets/Logo_of_Twitter.svg.png" height={35} />
         </div>
         <div className={styles.title}>
-        {errorMsg && (<p className={styles.errorMsg}>Veuillez vérifier votre identifiant ou votre mot de passe. </p>)}
+        {errorMsg && (<p className={styles.errorMsg}>Remplissez le formulaire afin de vous inscrire. </p>)}
           <h2>Create your hackatweet account</h2>
         </div>
         <div className={styles.form}>

@@ -8,9 +8,7 @@ export default function LastTweets(props) {
   const [lastsTweet, setLastTweet] = useState([]);
   const user = useSelector((state) => state.users.value);
 
-  const [likedBy, setLikedBy] = useState();
   const [likedTweets, setLikedTweets] = useState([])
-  const [countLike, setCountLike] = useState(0)
 
   const toggleLike = async (tweetId) => {
     

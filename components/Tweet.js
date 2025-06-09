@@ -23,7 +23,6 @@ export default function Tweet(props) {
         })
         .then(response => response.json())
         .then(data => {
-          console.log(data);
           if(data.result){
             props.onTweet();
             setValidMessage('Le tweet a bien été enregistré')

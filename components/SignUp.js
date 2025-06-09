@@ -24,7 +24,7 @@ export default function SignUp(props) {
       console.log(data)
       
       if(data.result){
-        dispatch(login({username: data.newDoc.username, firstname: data.newDoc.firstname, token: data.newDoc.token}))
+        dispatch(login({username: data.newDoc.username, firstname: data.newDoc.firstname, likedTweets: data.newDoc.likedTweets, token: data.newDoc.token}))
         router.push('/home')
       } else{
         setErrorMsg(true)

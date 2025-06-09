@@ -7,16 +7,34 @@ import { faHeart, faTrash } from "@fortawesome/free-solid-svg-icons";
 export default function LastTweets(props) {
   const [lastsTweet, setLastTweet] = useState([]);
   const user = useSelector((state) => state.users.value);
+  const token = user.token
+  console.log(user);
+  
 
-  const [likedTweets, setLikedTweets] = useState([])
+  const [likedTweets, setLikedTweets] = useState(user.likedTweets)
+  console.log(user.likedTweets);
+  
 
   const toggleLike = async (tweetId) => {
-    
-    setLikedTweets((prevLiked) =>
+
+    fetch(`http://localhost:3000/tweets/like/${token}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({tweet: tweetId})
+    })
+    .then(response => response.json())
+    .then(data => {
+      if(data.result){
+        setLikedTweets((prevLiked) =>
           prevLiked.includes(tweetId)
             ? prevLiked.filter((id) => id !== tweetId)
             : [...prevLiked, tweetId]
           );
+        
+        props.onRefresh();
+      }
+
+    })
   };
 
   useEffect(() => {
@@ -25,13 +43,12 @@ export default function LastTweets(props) {
       .then((data) => {
         if (data) {
           setLastTweet(data)
-        
         }
       });
   }, [props.refresh]);
 
   const tweets = lastsTweet.map((e, key) => {
-    const isLiked = likedTweets.includes(e._id);
+    const isLiked = likedTweets?.includes(e._id);
   
     return (
       <div key={key} className={styles.tweetContainer}>

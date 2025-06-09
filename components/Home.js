@@ -10,6 +10,10 @@ function Home() {
   const user = useSelector((state) => state.users.value);
   const [refreshTrigger, setRefreshTrigger] = useState(0);
   
+  const handleRefresh = () => {
+  setRefreshTrigger(prev => !prev); // toggle = forcer le useEffect à se relancer
+  };
+  
   return (
     <div>
       <main className={styles.main}>
@@ -41,7 +45,7 @@ function Home() {
             <Tweet onTweet={() => setRefreshTrigger(prev => prev + 1)}/>
           </div>
           <div className={styles.tweetContainer}>
-            <LastTweets refresh={refreshTrigger}/>
+            <LastTweets refresh={refreshTrigger} onRefresh={handleRefresh}/>
           </div>
         </div>
         <div id="right" className={styles.right}>

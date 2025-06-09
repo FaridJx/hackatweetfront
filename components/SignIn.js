@@ -21,7 +21,7 @@ export default function SignIn(props) {
     .then(response => response.json())
     .then(data => {      
       if(data.result){
-        dispatch(login({username: data.data.username, firstname: data.data.firstname, token: data.data.token}))        
+        dispatch(login({username: data.data.username, firstname: data.data.firstname, likedTweets: data.data.likedTweets, token: data.data.token}))        
         router.push('/home')
       } else{
         setErrorMsg(true)

@@ -37,6 +37,22 @@ export default function LastTweets(props) {
     })
   };
 
+
+  const deleteTweet = (tweetId) => {
+     fetch(`http://localhost:3000/tweets/delete/${tweetId}`, {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+      // body: JSON.stringify({tweet: tweetId})
+    })
+    .then(response => response.json())
+    .then(data => {
+      if(data.result){
+        alert(`${data.message}`)
+        props.onRefresh();
+      }
+    })
+  }
+
   useEffect(() => {
     fetch("http://localhost:3000/tweets")
       .then((response) => response.json())
@@ -74,7 +90,7 @@ export default function LastTweets(props) {
           </div>
           {user.token === e.user.token && (
             <div>
-              <FontAwesomeIcon icon={faTrash} className={styles.trash} />
+              <FontAwesomeIcon icon={faTrash} className={styles.trash} onClick={() => deleteTweet(e._id)}/>
             </div>
           )}
         </div>

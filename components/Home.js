@@ -53,7 +53,7 @@ function Home() {
             <h3>Trends</h3>
           </div>
           <div>
-            <Trends />
+            <Trends refresh={refreshTrigger} onRefresh={handleRefresh} />
           </div>
         </div>
       </main>

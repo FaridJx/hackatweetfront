@@ -1,16 +1,23 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import styles from '../styles/Trends.module.css'
 
-export default function Trends() {
+export default function Trends(props) {
 
-    const data = [
-        {hastag: "fiesta"},
-        {hastag: "lcdFinal"},
-        {hastag: "rollandGarros"},
-    ]
+    const [trends, setTrends] = useState([])
+
+    useEffect(() => {
+        fetch("http://localhost:3000/trends")
+          .then((response) => response.json())
+          .then((data) => {
+            if (data) {
+              setTrends(data);
+            }
+          });
+      }, [props.refresh]);
 
 
-    const hastagList = data.map((e, key) => {
+
+    const hastagList = trends.map((e, key) => {
         return (
             <div>
                 <h4>#{e.hastag}</h4>

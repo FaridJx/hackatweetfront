@@ -61,8 +61,8 @@ export default function LastTweets(props) {
   const tweets = lastsTweet.map((e, key) => {
     function formatMessage(message) {
       const pattern = /#[a-z0-9]+/gi;
-      const parts = message.split(pattern); // texte hors hashtag
       const matches = message.match(pattern); // hashtags
+      const parts = message.split(pattern); // texte hors hashtag
 
       const result = [];
 

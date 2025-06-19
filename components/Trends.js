@@ -4,7 +4,7 @@ import styles from '../styles/Trends.module.css'
 export default function Trends(props) {
 
     const [trends, setTrends] = useState([])
-    const objets = {}
+    const trendsObject = {}
 
      useEffect( () =>{
       fetch("http://localhost:3000/trends")
@@ -18,14 +18,14 @@ export default function Trends(props) {
 
       for (let i = 0; i < trends.length; i++) {
                 const tweet = trends[i].hashtag;
-                objets[tweet] ? objets[tweet]+=1 : objets[tweet]=1            
+                trendsObject[tweet] ? trendsObject[tweet]+=1 : trendsObject[tweet]=1            
       }
-      
-      const hastagList = Object.keys(objets).map((e, key) => {
+
+      const hastagList = Object.keys(trendsObject).map((e, key) => {
         return (
             <div>
                 <h4>{e}</h4>
-                <p>{objets[e]} Tweets</p>
+                <p>{trendsObject[e]} Tweets</p>
             </div>
         )
     })

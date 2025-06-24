@@ -8,10 +8,8 @@ export default function LastTweets(props) {
   const [lastsTweet, setLastTweet] = useState([]);
   const user = useSelector((state) => state.users.value);
   const token = user.token;
-  console.log(user);
 
   const [likedTweets, setLikedTweets] = useState(user.likedTweets);
-  console.log(user.likedTweets);
 
   const toggleLike = async (tweetId) => {
     fetch(`http://localhost:3000/tweets/like/${token}`, {

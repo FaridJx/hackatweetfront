@@ -21,7 +21,6 @@ export default function SignUp(props) {
     })
     .then(response => response.json())
     .then(data => {
-      console.log(data)
       
       if(data.result){
         dispatch(login({username: data.newDoc.username, firstname: data.newDoc.firstname, likedTweets: data.newDoc.likedTweets, token: data.newDoc.token}))

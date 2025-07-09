@@ -12,8 +12,8 @@ export default function Tweet(props) {
   const user = useSelector((state) => state.users.value);
   let maxCarac = tweet.length > 280 ? { color: "red" } : { color: "white" };
 
-  const handleTweet = () => {
-    fetch(`http://localhost:3000/tweets/newTweet/${user.token}`, {
+  const handleTweet = async () => {
+    await fetch(`http://localhost:3000/tweets/newTweet/${user.token}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ message: tweet }),
@@ -32,7 +32,7 @@ export default function Tweet(props) {
                 body: JSON.stringify({ hashtag: hashtag }),
               })
               .then(response => response.json())
-              .then(data => console.log('réussi'))
+              .then(data => {props.onTweet()})
             })
           }
           props.onTweet();

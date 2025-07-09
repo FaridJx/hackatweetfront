@@ -6,26 +6,24 @@ export default function Trends(props) {
     const [trends, setTrends] = useState([])
     const trendsObject = {}
 
-     useEffect( () =>{
-      fetch("http://localhost:3000/trends")
+     useEffect(() =>{
+       fetch("http://localhost:3000/trends")
           .then((response) => response.json())
           .then((data) => {
             if (data) {
               setTrends(data);
             }
           });
-      }, [props.onRefresh]);
+      }, [props.refresh]);
+      console.log(trends);
+      
 
-      for (let i = 0; i < trends.length; i++) {
-                const tweet = trends[i].hashtag;
-                trendsObject[tweet] ? trendsObject[tweet]+=1 : trendsObject[tweet]=1            
-      }
 
-      const hastagList = Object.keys(trendsObject).map((e, key) => {
+    const hastagList = trends.map((e, key) => {
         return (
             <div>
-                <h4>{e}</h4>
-                <p>{trendsObject[e]} Tweets</p>
+                <h4>{e.hashtag}</h4>
+                <p>{e.counter} Tweets</p>
             </div>
         )
     })

@@ -117,5 +117,5 @@ export default function LastTweets(props) {
     );
   });
 
-  return <div>{tweets}</div>;
+  return <div>{tweets.reverse()}</div>;
 }

@@ -18,10 +18,11 @@ export default function Trends(props) {
       console.log(trends);
       
 
-
     const hastagList = trends.map((e, key) => {
+      let style
+      e.counter <= 0 && (style = {display: "none"})
         return (
-            <div>
+            <div style={style}>
                 <h4>{e.hashtag}</h4>
                 <p>{e.counter} Tweets</p>
             </div>

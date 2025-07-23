@@ -57,6 +57,12 @@ export default function LastTweets(props) {
   }, [props.refresh]);
 
   const tweets = lastsTweet.map((e, key) => {
+    // const day = e.date.getDate()
+    // console.log(day);
+    
+    // const month = e.date.getMonth()+1
+    // const year = e.date.getFullYear()
+
     function formatMessage(message) {
       const pattern = /#[a-z0-9]+/gi;
       const matches = message.match(pattern); // hashtags
@@ -90,7 +96,7 @@ export default function LastTweets(props) {
             alt="avatar girl"
           />
           <p className={styles.userName}>{e.user.firstname}</p>
-          <p className={styles.userTag}>@{e.user.username}</p> <p>- {e.time}</p>
+          <p className={styles.userTag}>@{e.user.username}</p> <p>- {e.date}</p>
         </div>
         <div className={styles.tweetMsg}>{formatMessage(e.message)}</div>
         <div className={styles.judge}>

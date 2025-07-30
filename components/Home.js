@@ -6,14 +6,13 @@ import LastTweets from "./LastTweets";
 import Trends from "./Trends";
 
 function Home() {
-
   const user = useSelector((state) => state.users.value);
   const [refreshTrigger, setRefreshTrigger] = useState(0);
-  
+
   const handleRefresh = () => {
-  setRefreshTrigger(prev => !prev); // toggle = forcer le useEffect à se relancer
+    setRefreshTrigger((prev) => !prev); // toggle = forcer le useEffect à se relancer
   };
-  
+
   return (
     <div>
       <main className={styles.main}>
@@ -24,17 +23,18 @@ function Home() {
           <div className={styles.leftContainer}>
             <div>
               <img
-                className={styles.leftHeader}
-                src="/assets/Logo_of_Twitter.svg.png"
+                width={50}
+                height={50}
+                src="/assets/Logo_of_Twitter.webp"
                 alt="Twitter logo"
               />
             </div>
             <div className={styles.leftFooter}>
               <div>
-                <img />
+                <h4>{user.firstname}</h4>
               </div>
               <div>
-                <h4>{user.firstname}</h4>
+                <p>Disconnect</p>
               </div>
             </div>
           </div>
@@ -42,10 +42,10 @@ function Home() {
         <div id="center" className={styles.center}>
           <div className={styles.centerHeader}>
             <h3>Home</h3>
-            <Tweet onTweet={() => setRefreshTrigger(prev => prev + 1)}/>
+            <Tweet onTweet={() => setRefreshTrigger((prev) => prev + 1)} />
           </div>
           <div className={styles.tweetContainer}>
-            <LastTweets refresh={refreshTrigger} onRefresh={handleRefresh}/>
+            <LastTweets refresh={refreshTrigger} onRefresh={handleRefresh} />
           </div>
         </div>
         <div id="right" className={styles.right}>

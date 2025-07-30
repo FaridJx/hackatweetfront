@@ -92,8 +92,10 @@ export default function LastTweets(props) {
       <div key={key} className={styles.tweetContainer}>
         <div className={styles.userInfo}>
           <img
-            className={styles.imgAvatar}
-            src="../assets/avataaars.png"
+            // className={styles.imgAvatar}
+            width={60}
+            height={60}
+            src="../assets/avataaars.webp"
             alt="avatar girl"
           />
           <p className={styles.userName}>{e.user.firstname}</p>

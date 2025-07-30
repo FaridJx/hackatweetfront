@@ -25,12 +25,11 @@
   justify-content: space-between;
 }
 
-.leftHeader{
-  height: 50px;
-  width: 50px;
-}
-
 .leftFooter{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
   color: white;
 }
 

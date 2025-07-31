@@ -4,14 +4,25 @@ import { useDispatch, useSelector } from "react-redux";
 import Tweet from "./Tweet";
 import LastTweets from "./LastTweets";
 import Trends from "./Trends";
+import { logout } from "../reducers/users";
+import { useRouter } from 'next/navigation';
+// import Link from "next/link"
+
 
 function Home() {
   const user = useSelector((state) => state.users.value);
   const [refreshTrigger, setRefreshTrigger] = useState(0);
+  const dispatch = useDispatch()
+  const router = useRouter()
 
   const handleRefresh = () => {
     setRefreshTrigger((prev) => !prev); // toggle = forcer le useEffect à se relancer
   };
+
+  const handleLogout = () => {
+    dispatch(logout())
+    router.push('/');
+  }
 
   return (
     <div>
@@ -34,7 +45,7 @@ function Home() {
                 <h4>{user.firstname}</h4>
               </div>
               <div>
-                <p>Disconnect</p>
+                <span onClick={handleLogout}>Disconnect</span>
               </div>
             </div>
           </div>

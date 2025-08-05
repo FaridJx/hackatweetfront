@@ -36,7 +36,7 @@ function Home() {
               <img
                 width={50}
                 height={50}
-                src="/assets/Logo_of_Twitter.webp"
+                src="../assets/Logo hackatweet.webp"
                 alt="Twitter logo"
               />
             </div>
@@ -45,7 +45,7 @@ function Home() {
                 <h4>{user.firstname}</h4>
               </div>
               <div>
-                <span onClick={handleLogout}>Disconnect</span>
+                <span className={styles.disconnectButton} onClick={handleLogout}>Disconnect</span>
               </div>
             </div>
           </div>

@@ -5,7 +5,7 @@
 .error{
     text-align: center;
     font-weight: 700;
-    color: red;
+    color: 	#ff1f1f;
 }
 
 .valid{
@@ -34,7 +34,7 @@
     border: none;
     color: white;
     font-weight: bold;
-    background-color: #348eed;
+    background-color: #4aa8ff;
     border-radius: 20px;
     text-align: center;
     cursor: pointer;

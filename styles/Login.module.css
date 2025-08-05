@@ -15,7 +15,7 @@
     grid-column-end: 6;
     grid-row-start: 1;
     grid-row-end: 13;
-    background-image: url('../public/assets/Logo_of_Twitter.svg.png'), url('../public/assets/cadre-dore-sur-fond-bleu.jpg');
+    background-image: url('../public/assets/Logo hackatweet.webp'), url('../public/assets/cadre-dore-sur-fond-bleu.jpg');
     background-position: center;
     background-size: 200px, cover;
     background-repeat: no-repeat;
@@ -52,13 +52,13 @@
     width: 150px;
     border-radius: 20px;
     background-color: transparent;
-    color: #189df0;
+    color: #4aa8ff;
     font-weight: 700;
     cursor: pointer;
     transition: 0.5s;
 }
 
 .btnLogin:hover{
-    background-color: #189df0;
+    background-color: 	#4aa8ff;
     color: white;
 }

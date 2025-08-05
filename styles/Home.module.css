@@ -33,6 +33,17 @@
   color: white;
 }
 
+.disconnectButton{
+  font-weight: 700;
+  color: 	#ff1f1f;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.disconnectButton:hover{
+  font-size: 18px;
+}
+
 /* --------------- CENTER SIDE ----------------- */
 
 .center{

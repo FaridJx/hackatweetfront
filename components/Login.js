@@ -23,7 +23,7 @@ export default function () {
         <section className={styles.rightLogin}>
           <div className={styles.rightZone}>
             <div>
-              <img src="../assets/Logo_of_Twitter.svg.png" height={30} />
+              <img src="../assets/Logo hackatweet.webp" height={30} />
             </div>
             <div>
               <h1 className={styles.title}>See what's happening</h1>
